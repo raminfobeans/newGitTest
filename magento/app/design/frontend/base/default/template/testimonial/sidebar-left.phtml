@@ -1,0 +1,49 @@
+<?php 
+/**
+ * Magento
+ *
+ * Testimonial Plus for Magento
+ * Author: Hire Magento
+ * Website: www.hiremagento.com 
+ * Suport Email: hiremagento@gmail.com
+ *
+**/
+?>
+<?php
+$collection = Mage::getModel('testimonial/testimonial')
+				->getCollection()
+				->addFieldToFilter('status', array('eq' => 1))
+				->addFieldToFilter('sidebar', array('eq' => 1));				
+if(count($collection) > 0):				
+?>
+
+<div class="block block-hmtestimonial">
+  <div class="block-title"> <strong><span>Testimonials</span></strong> </div>
+  <div class="block-content">
+    <div id="testimonialrotate">
+      <?php $_process = Mage::helper('cms')->getBlockTemplateProcessor();?>
+      <?php foreach ($collection as $_dataset): ?>
+      <div> 
+      	<div class="client_image">
+      	<?php if($_dataset->getData('video') != '' && $this->helper('testimonial')->getConfigShowVideo()):
+			$videokey = explode("=", $_dataset->getData('video'));
+			if(isset($videokey[1]) && $videokey[1] != ''){
+			?>
+			<iframe width="170" height="135" src="//www.youtube.com/embed/<?php echo $videokey[1];?>?rel=0" frameborder="0" allowfullscreen></iframe>
+            <?PHP }?>
+            <?php 
+	  		elseif($_dataset->getData('image') != ''):?>
+      			<img src="<?php echo Mage::getBaseUrl('media').$_dataset->getData('image') ?>" width="170"  alt="<?php echo $_dataset->getData('name') ?>"  />
+		   <?php endif;?>
+        </div>
+      <?php echo $_process->filter($_dataset->getData('testimonial')); ?>
+      	
+        <p style="text-align:right;"><?php echo $_dataset->getData('name') ?></p>
+      </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+  <div class="actions"> <a href="<?php echo Mage::getUrl('testimonial');?>"> View All </a> </div>
+</div>
+<div style="display:none;"><a href="http://www.hiremagento.com" title="Hire Magento Developer">Hire Magento</a></div>
+<?php endif;?>

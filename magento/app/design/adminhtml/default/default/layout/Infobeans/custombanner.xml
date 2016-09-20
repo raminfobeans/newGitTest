@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminhtml_custombanner_index>
+        <reference name="content">
+            <block type="custombanner/adminhtml_custombanner" name="custombanner" />
+        </reference>
+    </adminhtml_custombanner_index>
+</layout>	

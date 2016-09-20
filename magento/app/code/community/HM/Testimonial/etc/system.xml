@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<config>
+	  <tabs>
+		<hire_magento translate="label" module="testimonial">
+            <label>Hire Magento</label>
+            <sort_order>0</sort_order>
+        </hire_magento>
+	  </tabs>
+	  <sections>
+		<hm_testimonial  translate="label" module="testimonial">                    
+		<label>Testimonial</label>
+		<tab>hire_magento</tab>
+		<frontend_type>text</frontend_type>
+		<sort_order>0</sort_order>
+		<show_in_default>1</show_in_default>
+		<show_in_website>1</show_in_website>
+		<show_in_store>1</show_in_store>            
+					<groups>
+				      <testimonial_general translate="label"> 
+					  <label>General</label>
+					  <frontend_type>text</frontend_type>
+					  <sort_order>0</sort_order>
+					  <show_in_default>1</show_in_default>
+					  <show_in_website>1</show_in_website>
+					  <show_in_store>1</show_in_store>
+				       <fields>
+                          <frontend_submission translate="label">
+                            <label>Enable Frontend Submission</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Enable Frontend Submission</comment>
+                          </frontend_submission>
+                          <guest_submission translate="label">
+                            <label>Allow Guest Submission</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Allow Guest Submission</comment>
+                          </guest_submission>
+                          <approve_testimonial translate="label">
+                            <label>Auto Approve Testimonial</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Auto Approve Testimonial</comment>
+                          </approve_testimonial>
+                          <display_video translate="label">
+                            <label>Display Video</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Display Video</comment>
+                          </display_video>
+                          <display_name translate="label">
+                            <label>Display Name</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Display Name</comment>
+                          </display_name>
+						  <display_wedsite translate="label">
+                            <label>Display Wedsite</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Display Wedsite</comment>
+                          </display_wedsite>	
+						  <enable_captcha translate="label">
+                            <label>Enable Captcha</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Enable Captcha</comment>
+                          </enable_captcha>					  
+					   </fields>
+					   </testimonial_general>
+					</groups>
+		</hm_testimonial>
+	  </sections>
+</config>

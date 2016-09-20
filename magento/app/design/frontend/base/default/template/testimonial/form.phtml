@@ -1,0 +1,100 @@
+<?php 
+/**
+ * Magento
+ *
+ * Testimonial Plus for Magento
+ * Author: Hire Magento
+ * Website: www.hiremagento.com 
+ * Suport Email: hiremagento@gmail.com
+ *
+**/
+?>
+<div class="testimonial-submit">
+	<div class="page-title">
+		<h1><?php echo $this->__('Submit Your Testimonial'); ?></h1>
+	</div>
+	<form action="<?php echo Mage::getUrl('testimonial/form/post'); ?>" method="post" id="testimonialForm" enctype="multipart/form-data">
+		<?php echo $this->getBlockHtml('formkey'); ?>
+		<ul class="form-list">
+			<li>
+				<label for="name" class="required">
+					<?php echo $this->__('Your Name'); ?>
+					<em>*</em>
+				</label>
+				<div class="input-box">
+					<input type="text" name="name" value="<?php echo isset($_SESSION['testimonial']['name']) ? $_SESSION['testimonial']['name'] : ''; ?>" id="name" class="input-text required-entry" title="<?php echo $this->__('Your Name'); ?>" />
+				</div>
+			</li>
+			<li>
+				<label for="email" class="required">
+					<?php echo $this->__('Your Email'); ?>
+					<em>*</em>
+				</label>
+				<div class="input-box">
+					<input type="text" name="email" value="<?php echo isset($_SESSION['testimonial']['email']) ? $_SESSION['testimonial']['email'] : ''; ?>" id="email" class="input-text required-entry validate-email" title="<?php echo $this->__('Your Email') ?>" />
+				</div>
+			</li>
+			<li>
+				<label for="company">
+					<?php echo $this->__('Your Website Name'); ?>
+				</label>
+				<div class="input-box">
+					<input type="text" name="company" value="<?php echo isset($_SESSION['testimonial']['company']) ? $_SESSION['testimonial']['company'] : ''; ?>" id="company" class="input-text" title="<?php echo $this->__('Your Website Name') ?>" />
+				</div>
+			</li>
+			<li>
+				<label for="website">
+					<?php echo $this->__('Your Website URL'); ?>
+				</label>
+				<div class="input-box">
+					<input type="text" name="website" value="<?php echo isset($_SESSION['testimonial']['website']) ? $_SESSION['testimonial']['website'] : ''; ?>" id="website" class="input-text validate-url" title="<?php echo $this->__('Your Website URL') ?>" />
+				</div>
+			</li>
+            <li>
+				<label for="image">
+					<?php echo $this->__('Image'); ?>
+				</label>
+				<div class="input-box">
+					<input type="file" name="image" value="" id="image" class="input-text" title="<?php echo $this->__('Image') ?>" />
+				</div>
+			</li>
+            <li>
+				<label for="video">
+					<?php echo $this->__('Video URL'); ?>
+				</label>
+				<div class="input-box">
+					<input type="text" name="video" value="<?php echo isset($_SESSION['testimonial']['video']) ? $_SESSION['testimonial']['video'] : ''; ?>" id="video" class="input-text validate-url" title="<?php echo $this->__('Video URL') ?>" />
+				</div>
+			</li>
+			<li>
+				<label for="testimonial" class="required">
+					<?php echo $this->__('Your Testimonial'); ?>
+					<em>*</em>
+				</label>
+				<div class="input-box">
+					<textarea name="testimonial" id="testimonial" class="required-entry" style="width: 400px; height: 150px;"><?php echo isset($_SESSION['testimonial']['testimonial']) ? $_SESSION['testimonial']['testimonial'] : ''; ?></textarea>
+				</div>
+			</li>
+            <?php if(Mage::getStoreConfig('hm_testimonial/testimonial_general/enable_captcha') == 1): ?>
+            <?php echo $this->getLayout()->createBlock('hm_captcha/captcha')->setFormId('vcaptcha')->toHtml() ?>
+            <?php endif; ?>
+		</ul>
+		<div class="buttons-set">
+			<p class="required"><?php echo $this->__('* Required Fields'); ?></p>
+			<p class="back-link"><a href="<?php echo Mage::getUrl('testimonial'); ?>" class="back-link"><small>&laquo; </small><?php echo $this->__('Back'); ?></a></p>
+			<button type="submit" title="<?php echo $this->__('Submit'); ?>" class="button"><span><span><?php echo $this->__('Submit'); ?></span></span></button>
+		</div>
+	</form>
+    <?php if(Mage::getStoreConfig('hm_testimonial/testimonial_general/enable_captcha') == 1): ?>
+<script type="text/javascript">
+    //<![CDATA[
+    $('vcaptcha').captcha.refresh($('catpcha-reload'));
+    //]]>
+</script>
+<?php endif; ?>
+	<script type="text/javascript">
+	//<![CDATA[
+		var dataForm = new VarienForm('testimonialForm', true);
+	//]]>
+	</script>
+</div>

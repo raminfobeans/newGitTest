@@ -1,0 +1,59 @@
+<?php 
+/**
+ * Magento
+ *
+ * Testimonial Plus for Magento
+ * Author: Hire Magento
+ * Website: www.hiremagento.com 
+ * Suport Email: hiremagento@gmail.com
+ *
+**/
+?>
+<?php
+$collection = Mage::getModel('testimonial/testimonial')->getCollection()
+				->addFieldToFilter('status', array('eq' => 1));								
+?>
+<div class="page-title testimonial-title">
+  <h1><?php echo $this->__('Customer Tetimonials'); ?></h1>
+  <?php 
+  if ($this->helper('testimonial')->getConfigEnableFrontend() && $this->helper('testimonial')->getConfigEnableGuest()): ?>
+  <div class="submit-testimonial">
+    <button class="button" onclick="window.location='<?php echo Mage::getUrl('testimonial/form');?>'"> <span> <span> <?php echo $this->__('Submit Your Testimonial'); ?> </span> </span> </button>
+  </div>
+  <?php elseif($this->helper('customer')->isLoggedIn() && $this->helper('testimonial')->getConfigEnableFrontend()):?>
+  <div class="submit-testimonial">
+    <button class="button" onclick="window.location='<?php echo Mage::getUrl('testimonial/form');?>'"> <span> <span> <?php echo $this->__('Submit Your Testimonial'); ?> </span> </span> </button>
+  </div>
+  <?php endif; ?>
+</div>
+<?php $_process = Mage::helper('cms')->getBlockTemplateProcessor();?>
+<ul id="hmtestimonial-list">
+  <?php foreach ($collection as $_dataset): ?>
+  <li class="hmtestimonial">
+    <div class="testimonial_img">
+    	<?php if($_dataset->getData('video') != '' && $this->helper('testimonial')->getConfigShowVideo()):
+			$videokey = explode("=", $_dataset->getData('video'));
+			if(isset($videokey[1]) && $videokey[1] != ''){
+			?>
+			<iframe width="170" height="135" src="//www.youtube.com/embed/<?php echo $videokey[1];?>?rel=0" frameborder="0" allowfullscreen></iframe>
+            <?PHP }?>
+      <?php 
+	  elseif($_dataset->getData('image') != ''):?>
+      <img src="<?php echo Mage::getBaseUrl('media').$_dataset->getData('image') ?>" width="170"  alt="<?php echo $_dataset->getData('name') ?>" />
+      <?php endif;?>
+    </div>
+    <div class="testimonial_left">
+      <div class="testimonial_info"><?php echo $_process->filter($_dataset->getData('testimonial')); ?></div>
+      <div class="test_clean"></div>
+      <div class="client_detail"> <?php if ($this->helper('testimonial')->getConfigShowName()): ?><?php echo $_dataset->getData('name') ?><br /><?php endif; ?>
+        <i><?php echo $_dataset->getData('email') ?>&nbsp;&nbsp;
+        <?php if ($this->helper('testimonial')->getConfigShowUrl()): ?>
+					<?php if ($_dataset->getData('company')) { ?>
+					<a href="<?php echo $_dataset->getData('website') ?>" title="<?php echo $_dataset->getData('company') ?>" target="_blank"><?php echo $_dataset->getData('company') ?></a>
+				<?php } ?>
+		<?php endif; ?></i> </div>
+    </div>
+  </li>
+  <?php endforeach; ?>
+</ul>
+<div style="display:none;"><a href="http://www.hiremagento.com" title="Hire Magento Developer">Hire Magento</a></div>

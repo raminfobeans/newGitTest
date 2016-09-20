@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Infobeans_Custombanner>
+            <version>0.1.1</version>
+        </Infobeans_Custombanner>
+    </modules>
+    <global>
+        <models>
+            <custombanner>
+                <class>Infobeans_Custombanner_Model</class>
+                <resourceModel>custombanner_mysql4</resourceModel>
+            </custombanner>
+            <custombanner_mysql4>
+                <class>Infobeans_Custombanner_Model_Mysql4</class>
+                <entities>
+                    <ram>
+                        <table>ram</table>
+                    </ram>                         
+                    <custombanner>
+                        <table>custombanner</table>
+                    </custombanner>                         
+
+                </entities>              
+            </custombanner_mysql4>            
+        </models>
+        <resources>
+            <custombanner_setup>
+                <setup>
+                    <module>Infobeans_Custombanner</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </custombanner_setup>
+
+            <custombanner_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </custombanner_write>
+            <custombanner_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </custombanner_read>
+        </resources>    
+        <blocks>
+            <infobeans_custombanner>
+                <class>Infobeans_Custombanner_Block</class>
+            </infobeans_custombanner>
+        </blocks>
+        <helpers>
+	    <custombanner>
+	        <class>Infobeans_Custombanner_Helper</class>
+	    </custombanner>
+	</helpers>
+        <events>
+            <infobeans_register_visit>
+                <observers>
+                    <infobeans_custombanner>
+                        <class>custombanner/observer</class>
+                        <method>registerVisit</method>
+                        <type>singleton</type>
+                    </infobeans_custombanner>
+                </observers>
+            </infobeans_register_visit>
+
+            <checkout_cart_product_add_after>
+                <observers>
+                    <check_cart_qty>
+                        <type>singleton</type>
+                        <class>custombanner/observer</class>
+                        <method>checkCartQty</method>
+                    </check_cart_qty>
+                </observers>
+            </checkout_cart_product_add_after>
+            
+            <customer_login>
+                <observers>
+                    <change_customer_group>
+                        <type>singleton</type>
+                        <class>custombanner/observer</class>
+                        <method>changeCustomerGroup</method>
+                    </change_customer_group>
+                </observers>
+            </customer_login>    
+
+            <customer_logout>
+                <observers>
+                    <revert_customer_group>
+                        <type>singleton</type>
+                        <class>custombanner/observer</class>
+                        <method>revertCustomerGroup</method>
+                    </revert_customer_group>
+                </observers>
+            </customer_logout>    
+
+                        
+        </events>
+        
+
+        
+    </global>
+    <frontend>
+        <routers>
+            <custombanner>
+                <use>standard</use>
+                <args>
+                    <module>Infobeans_Custombanner</module>
+                    <frontName>custombanner</frontName>
+                </args>
+            </custombanner>
+        </routers>
+    </frontend>
+     
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Infobeans_Custombanner after="Mage_Adminhtml">Infobeans_Custombanner_Adminhtml</Infobeans_Custombanner>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+   
+    <adminhtml>		
+        <layout>
+            <updates>
+                <custombanner>
+                    <file>custombanner.xml</file>
+                </custombanner>
+            </updates>
+        </layout>
+    </adminhtml>
+
+</config>
+    

@@ -1,0 +1,24 @@
+<?php
+
+class Infobeans_Custombanner_Adminhtml_CustomBannerController extends Mage_Adminhtml_Controller_action
+{
+
+	protected function _initAction() {
+                
+		$this->loadLayout()
+			->_setActiveMenu('banners/items')
+			->_addBreadcrumb(Mage::helper('adminhtml')->__('Manage Banners'), Mage::helper('adminhtml')->__('Manage Bannersr'));
+		
+		return $this;
+	}   
+ 
+	public function indexAction() {
+            echo "dddd";
+		$this->_initAction()
+			->renderLayout();
+	}
+
+
+
+
+}

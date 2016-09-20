@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Infobeans_Featured>
+            <version>0.1.0</version>
+        </Infobeans_Featured>
+    </modules>
+    <global>
+        <blocks>
+            <infobeans_featured>
+                <class>Infobeans_Featured_Block</class>
+            </infobeans_featured>
+        </blocks>
+    </global>
+    <frontend>
+        <routers>
+            <featured>
+                <use>standard</use>
+                <args>
+                    <module>Infobeans_Featured</module>
+                    <frontName>featured</frontName>
+                </args>
+            </featured>
+        </routers>
+    </frontend>
+</config>
+    

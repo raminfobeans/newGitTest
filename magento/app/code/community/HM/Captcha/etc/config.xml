@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+        <HM_Captcha>
+            <version>0.1.0</version>
+        </HM_Captcha>
+    </modules>
+    <global>
+        <blocks>
+            <hm_captcha>
+                <class>HM_Captcha_Block</class>
+            </hm_captcha>
+        </blocks>
+    </global>
+    <frontend>
+        <routers>
+            <hm_captcha>
+                <use>standard</use>
+                <args>
+                    <module>HM_Captcha</module>
+                    <frontName>hm-captcha</frontName>
+                </args>
+            </hm_captcha>
+        </routers>
+    </frontend>
+</config>

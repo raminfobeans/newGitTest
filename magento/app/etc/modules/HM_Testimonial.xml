@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <HM_Testimonial>
+      <active>true</active>
+      <codePool>community</codePool>
+      <version>0.1.0</version>
+    </HM_Testimonial>
+	<HM_Captcha>
+            <active>true</active>
+            <codePool>community</codePool>
+        </HM_Captcha>
+  </modules>
+</config>

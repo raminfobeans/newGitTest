@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <default>
+    <reference name="head">
+			<action method="addJs"><file>mage/captcha.js</file></action>
+			<action method="addItem"><type>skin_js</type><name>js/hm/jquery.min.js</name><params/></action>
+			<action method="addItem"><type>skin_js</type><name>js/hm/testimonial.js</name><params/></action>
+			<action method="addCss"><stylesheet>css/hm/testimonial.css</stylesheet></action>
+		</reference>
+    <reference name="left">
+      <block type="testimonial/testimonial" name="testimonial_sidebar-left" template="testimonial/sidebar-left.phtml" />
+    </reference>
+  </default>
+  <testimonial_index_index>
+    <reference name="root">
+      <action method="setTemplate">
+        <template>page/2columns-left.phtml</template>
+      </action>
+    </reference>
+    <reference name="content">
+      <block type="testimonial/index" name="testimonial_index" template="testimonial/index.phtml"/>
+    </reference>
+  </testimonial_index_index>
+  <testimonial_form_index>
+    <reference name="root">
+      <action method="setTemplate">
+        <template>page/2columns-left.phtml</template>
+      </action>
+    </reference>
+    <reference name="content">
+      <block type="testimonial/testimonial" name="testimonial_form" template="testimonial/form.phtml"/>
+    </reference>
+  </testimonial_form_index>
+</layout>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- register the module and tell the system where it is located> -->
+<config>
+  <modules>
+    <Infobeans_Featured>
+      <active>true</active>
+      <codePool>local</codePool>
+    </Infobeans_Featured>
+  </modules>  
+</config>

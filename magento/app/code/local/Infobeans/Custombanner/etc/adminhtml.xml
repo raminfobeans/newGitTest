@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<config>
+
+    <menu>
+        <custombanner module="custombanner">
+            <title>R-Banner</title>
+            <sort_order>70</sort_order>
+            <children>
+                <manage  module="custombanner">
+                    <title>Config Setting </title>
+                    <action>adminhtml/system_config/edit/section/custombanner</action>
+                    <sort_order>2</sort_order>
+                </manage>
+                <add  module="custombanner">
+                    <title>Add banner</title>
+                    <action>adminhtml/custombanner/index</action>
+                    <sort_order>1</sort_order>
+                </add>
+
+            </children>
+        </custombanner>
+    </menu>
+   
+
+
+
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <custombanner module="custombanner">
+                        <title>R Banner</title>
+                        <sort_order>71</sort_order>               
+                        <children>
+                            <manage module="custombanner">
+                                <title>Manage Banners</title>
+                                <sort_order>0</sort_order>
+                            </manage>
+                        </children>
+                        <children>
+                            <add module="custombanner">
+                                <title>add banner</title>
+                                <sort_order>10</sort_order>
+                            </add>
+                        </children>
+                    </custombanner>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <custombanner translate="title" module="custombanner">
+                                        <title>RD  Banner</title>
+                                    </custombanner>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+
+
+
+
+		
+
+
+
+
+</config>

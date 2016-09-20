@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Infobeans_Custombanner>
+      <active>true</active>
+      <codePool>local</codePool>
+    </Infobeans_Custombanner>
+  </modules>
+</config>

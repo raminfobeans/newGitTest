@@ -1,0 +1,65 @@
+<?php 
+  $_featured=array(); 
+  $_productCollection=$this->getProduct();
+  $i=0;
+  foreach(  $_productCollection as $_product) {
+      $_featured[$i++]=$_product;
+  }
+ ?>
+
+
+<div class="content-top-bottom">
+    <h2>Featured Collections</h2>
+    <div class="col-md-6 men">
+        <?php $_product=$_featured[3];?>
+        <a href="<?php  echo $_product->getProductUrl() ?>" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image'); ?>" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>">
+            <div class="b-wrapper">
+                <h3 class="b-animate b-from-top top-in   b-delay03 ">
+                    <span>Lorem</span>	
+                </h3>
+            </div>
+        </a>
+
+
+    </div>
+    <div class="col-md-6">
+        <div class="col-md1 ">
+            <?php $_product=$_featured[1];?>
+         <a href="<?php  echo $_product->getProductUrl() ?>" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image'); ?>" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>">                <div class="b-wrapper">
+                    <h3 class="b-animate b-from-top top-in1   b-delay03 ">
+                        <span>Lorem</span>	
+                    </h3>
+                </div>
+            </a>
+
+        </div>
+        <div class="col-md2">
+            <div class="col-md-6 men1">
+        <?php $_product=$_featured[2];?>
+        <a href="<?php  echo $_product->getProductUrl() ?>" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image'); ?>" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>">                    <div class="b-wrapper">
+                        <h3 class="b-animate b-from-top top-in2   b-delay03 ">
+                            <span>Lorem</span>	
+                        </h3>
+                    </div>
+                </a>
+
+            </div>
+            <div class="col-md-6 men2">
+        <?php $_product=$_featured[0];?>
+        <a href="<?php  echo $_product->getProductUrl() ?>" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image'); ?>" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>">
+                    <div class="b-wrapper">
+                        <h3 class="b-animate b-from-top top-in2   b-delay03 ">
+                            <span>Lorem</span>	
+                        </h3>
+                    </div>
+                </a>
+
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="clearfix"> </div>
+</div>
+
+
+    

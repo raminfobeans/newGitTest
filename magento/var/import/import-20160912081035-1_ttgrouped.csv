@@ -1,0 +1,7 @@
+sku,_attribute_set,_type,_category,_root_category,_product_websites,description,image,name,price,short_description,status,tax_class_id,visibility,weight,qty,is_in_stock,_associated_sku,_associated_default_qty,_associated_position,_media_attribute_id,_media_image,_media_is_disabled
+tball,Default,simple,SPORTS,ROOT,base,Tennis Ball,/s/images.jpg,Tennis Ball,10,Tennis Ball,1,2,4,12,10,1,,,,88,/s/images.jpg,0
+Racquette,Default,simple,SPORTS,ROOT,base,Racquette,/s/download.jpg,Racquette,200,Racquette,1,2,4,13,10,1,,,,88,/s/download.jpg,0
+Table Tennis Board,Default,simple,SPORTS,ROOT,base,Table Tennis Board,/s/download_1_.jpg,Table Tennis Board,2000,Table Tennis Board,1,2,4,129,10,1,,,,88,/s/download_1_.jpg,0
+TTKIT,Default,grouped,SPORTS,ROOT,base,TABLE TENNIS FULL  KIT,/si/kit.jpg,TABLE TENNIS FULL  KIT,,TABLE TENNIS FULL  KIT,1,,4,,0,1,tball,0,0,88,/s/kit.jpg,0
+,,,,,,,,,,,,,,,,,Racquette,0,0,,,
+,,,,,,,,,,,,,,,,,Table Tennis Board,0,0,,,
